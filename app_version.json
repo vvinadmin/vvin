@@ -1,0 +1,7 @@
+{
+  "versionCode": 15,
+  "versionName": "15",
+  "apkUrl": "https://vvin.fun/app.apk",
+  "forceUpdate": true,
+  "changelog": "Initial stable release with direct wallet-gifting, BladePay recovery, and 5% commission rules."
+}
