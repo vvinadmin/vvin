@@ -872,6 +872,12 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    .playbook-section {
+        padding: 60px 0;
+    }
     .navbar {
         padding: 12px 0;
     }
@@ -887,14 +893,73 @@ h1, h2, h3, h4 {
     }
     .hero-actions {
         flex-direction: column;
+        align-items: center;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+        gap: 12px;
     }
+    .hero-actions .btn {
         width: 100%;
         max-width: 320px;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        width: 100%;
+    }
+    .stat-divider {
+        display: none;
     }
     .btn-lg {
         padding: 14px 24px;
+    }
+    .playbook-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 8px;
+    }
+    .playbook-tab-btn {
+        justify-content: center;
+        width: 100%;
+    }
+    .timeline-item {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .timeline-item::before {
+        display: none;
+    }
+    .timeline-time {
+        width: fit-content;
+        align-self: flex-start;
+        min-width: unset;
+    }
+    .playbook-content {
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 32px;
+    }
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    .section-header .title {
+        font-size: 26px;
+    }
+    .review-carousel-container {
+        padding: 24px 16px;
+    }
+    .review-text {
+        font-size: 14px;
+        line-height: 1.6;
     }
 }
 

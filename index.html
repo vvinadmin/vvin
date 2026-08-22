@@ -47,7 +47,7 @@
             <div class="hero-content">
                 <div class="promo-badge">
                     <span class="pulsing-dot"></span>
-                    <span class="badge-text">V VIN Android App V2.0 Live</span>
+                    <span class="badge-text" id="live-version-badge">V VIN Android App V2.0 Live</span>
                 </div>
                 <h1 class="hero-title">Empower Your Financial Growth With <span class="gold-gradient-text">V VIN</span></h1>
                 <p class="hero-subtitle">The ultimate decentralized community task reward system. Complete daily digital tasks, earn structured salaries, and grow your team to unlock up to 8 levels of recursive generational commission.</p>
@@ -640,7 +640,7 @@
             <h2 class="download-title">Ready to Start Earning?</h2>
             <p class="download-subtitle">Download the official V VIN Android App, input your sponsor code, and start your earning journey in minutes.</p>
             <div class="download-actions">
-                <a href="app.apk" download="app.apk" class="btn btn-primary-gilt btn-xl btn-pulse">
+                <a href="app.apk" download="app.apk" id="apk-download-link" class="btn btn-primary-gilt btn-xl btn-pulse">
                     <i class="fa-brands fa-android"></i> Download the App
                 </a>
             </div>
@@ -685,6 +685,9 @@
     </a>
 
     <!-- Mobile Nav Script & Interactive elements -->
+    <!-- Firebase SDK Compat Core and Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

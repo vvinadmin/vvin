@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.style.display = 'flex';
                 navMenu.style.flexDirection = 'column';
                 navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
+                navMenu.style.top = '60px';
                 navMenu.style.left = '0';
                 navMenu.style.width = '100%';
-                navMenu.style.backgroundColor = 'rgba(7, 7, 15, 0.96)';
+                navMenu.style.backgroundColor = 'rgba(7, 7, 15, 0.98)';
                 navMenu.style.padding = '24px';
                 navMenu.style.borderBottom = '1px solid var(--border-color)';
+                navMenu.style.zIndex = '1001';
                 mobileNavToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
             }
         });
@@ -201,5 +202,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    }
+
+    // 6. Connect Website directly to Firebase Firestore to load live App Version & APK details!
+    const firebaseConfig = {
+        apiKey: "AIzaSyAaxbPoPe7-_ndJ_WFnzH5MsVoDkICil_o",
+        projectId: "v-win-official",
+        storageBucket: "v-win-official.firebasestorage.app",
+        appId: "1:656798852078:android:3ec6f9640c666293b064ff"
+    };
+
+    try {
+        if (typeof firebase !== 'undefined') {
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            // Fetch app_config/version document live from Firestore
+            db.collection("app_config").doc("version")
+                .onSnapshot((doc) => {
+                    if (doc && doc.exists) {
+                        const data = doc.data();
+                        const versionName = data.versionName || "2.0";
+                        const apkUrl = data.apkUrl || "app.apk";
+
+                        // Update Version Badge on Hero
+                        const versionBadge = document.getElementById("live-version-badge");
+                        if (versionBadge) {
+                            versionBadge.innerText = `V VIN Android App V${versionName} Live`;
+                        }
+
+                        // Update APK download links
+                        const apkLink = document.getElementById("apk-download-link");
+                        if (apkLink) {
+                            apkLink.setAttribute("href", apkUrl);
+                        }
+                    }
+                }, (error) => {
+                    console.error("Error fetching live app version:", error);
+                });
+        }
+    } catch (err) {
+        console.error("Firebase init failed on landing page:", err);
     }
 });
