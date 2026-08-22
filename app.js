@@ -223,7 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (doc && doc.exists) {
                         const data = doc.data();
                         const versionName = data.versionName || "2.0";
-                        const apkUrl = data.apkUrl || "app.apk";
+                        let apkUrl = data.apkUrl || "https://vvin.fun/app.apk";
+                        if (apkUrl.includes("vwin.asia")) {
+                            apkUrl = apkUrl.replace("vwin.asia", "vvin.fun");
+                        }
 
                         // Update Version Badge on Hero
                         const versionBadge = document.getElementById("live-version-badge");
