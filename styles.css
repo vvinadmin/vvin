@@ -29,12 +29,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
     background-color: var(--bg-dark);
     color: var(--text-white);
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
@@ -883,6 +884,9 @@ h1, h2, h3, h4 {
     }
     .nav-menu {
         display: none; /* simple hidden for mobile, toggled with JS */
+    }
+    .nav-cta {
+        display: none;
     }
     .hamburger-menu {
         display: block;
