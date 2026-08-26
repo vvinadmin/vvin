@@ -1,7 +1,7 @@
 {
   "versionCode": 5,
   "versionName": "5.0",
-  "apkUrl": "https://vvin.fun/app.apk",
+  "apkUrl": "https://vvin.fun/Vvin.apk",
   "forceUpdate": true,
   "changelog": "Initial stable release with direct wallet-gifting, BladePay recovery, and 5% commission rules."
 }
