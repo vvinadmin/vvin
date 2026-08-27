@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (doc && doc.exists) {
                         const data = doc.data();
                         const versionName = data.versionName || "2.0";
-                        let apkUrl = data.apkUrl || "https://vvin.fun/Vvin.apk";
+                        let apkUrl = data.apkUrl || "https://github.com/vvinadmin/vvin/releases/latest/download/Vvin.apk";
                         if (apkUrl.includes("vwin.asia")) {
                             apkUrl = apkUrl.replace("vwin.asia", "vvin.fun");
                         }
